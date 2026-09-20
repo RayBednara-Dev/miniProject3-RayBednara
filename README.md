@@ -57,16 +57,6 @@ readings; those rows are dropped before charting.
 Ray Bednara
 ray.bednara@gmail.com
 
-## Version History
-
-* 0.2
-    * Narrowed down to a single Face to Path vs. Launch Direction chart
-* 0.1
-    * Initial release: kagglehub pull of golf swing trajectory data and five
-      matplotlib charts saved to `charts/`
-
-## License
-
 ## AI Usage
 
 I used Claude Code to write `golf.py`: loading the golf trajectory dataset with
