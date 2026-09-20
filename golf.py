@@ -3,7 +3,11 @@
 # Mini Project 3
 
 import kagglehub
+import pandas as pd
 from kagglehub import KaggleDatasetAdapter
+
+pd.set_option("display.max_rows", None)
+pd.set_option("display.max_columns", None)
 
 df = kagglehub.dataset_load(
     KaggleDatasetAdapter.PANDAS,
@@ -11,4 +15,6 @@ df = kagglehub.dataset_load(
     "golf_trajectory.csv",
 )
 
-print("First 5 records:", df.head())
+columns = ["Club Path (deg)", "Club Face (deg)", "Launch Direction (deg)", "Sidespin (rpm)"]
+complete_df = df[columns].dropna()
+print(complete_df)
