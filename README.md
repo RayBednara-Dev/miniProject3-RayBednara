@@ -52,6 +52,11 @@ If `kagglehub` fails to load the dataset, check your internet connection. Some
 rows in the raw data are missing `Face to Path (deg)` or `Launch Direction (deg)`
 readings; those rows are dropped before charting.
 
+`df[columns]` narrows the full 24-column dataset down to just those two
+columns, and `.dropna()` then removes any row where either value is missing
+(by default it drops a row if *any* of its columns are `NaN`). This guarantees
+every row that reaches the chart has a real value for both axes.
+
 ## Authors
 
 Ray Bednara
@@ -61,4 +66,5 @@ ray.bednara@gmail.com
 
 I used Claude Code to write `golf.py`: loading the golf trajectory dataset with
 kagglehub, narrowing it down to the Face to Path and Launch Direction columns,
-and generating the matplotlib scatter chart saved to `charts/`.
+and generating the matplotlib scatter chart saved to `charts/`. I also asked it
+to explain what `.dropna()` does, which allows the chart to be fully accurate in that only columns with both datapoints exists.
